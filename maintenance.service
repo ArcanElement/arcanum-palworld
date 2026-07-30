@@ -1,0 +1,10 @@
+[Unit]
+Description=Palworld server maintenance service
+Conflicts=palworld.service
+After=palworld.service
+OnSuccess=palworld.service
+
+[Service]
+Type=oneshot
+User=<username>
+ExecStart=steamcmd +login anonymous +app_update 2394010 validate +quit

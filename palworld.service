@@ -1,0 +1,16 @@
+[Unit]
+Description=Palworld Dedicated Server
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=300
+StartLimitAction=reboot
+
+[Service]
+Type=exec
+Restart=always
+RestartSec=30
+User=<username>
+ExecStart=<steam directory>/steam/steamapps/common/PalServer
+
+[Install]
+WantedBy=multi-user.target
